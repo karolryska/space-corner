@@ -15,6 +15,7 @@ body {
     height: 100%;
     font-family: 'Arial', sans-serif;
     scroll-behavior: smooth;
+    background-color: $bg-dark;
 }
 
 input,
@@ -22,4 +23,17 @@ button,
 textarea,
 select {
     font: inherit;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
 }
