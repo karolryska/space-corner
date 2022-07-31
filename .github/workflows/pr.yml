@@ -1,0 +1,32 @@
+name: Code check on pull request
+
+on:
+    pull_request:
+        branches:
+            - main
+
+jobs:
+    code-quality-check:
+        name: Lint source code
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout the repository
+              uses: actions/checkout@v3
+
+            - name: Setup Node
+              uses: actions/setup-node@v3
+              with:
+                  node-version: '16'
+
+            - name: Cache dependencies
+              uses: actions/cache@v3
+              with:
+                  path: ${{ github.workspace }}/node_modules
+                  key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}
+
+            - name: Install dependencies
+              run: |
+                  npm install
+            - name: Lint files
+              run: |
+                  npx eslint src
