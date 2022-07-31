@@ -1,0 +1,19 @@
+@import 'common';
+
+.wrapper {
+    @include flex-column();
+    gap: 30px;
+
+    @include mq(md) {
+        flex-direction: row;
+        align-items: center;
+        gap: 40px;
+    }
+
+    & .link {
+        & a {
+            color: $light;
+            text-transform: capitalize;
+        }
+    }
+}

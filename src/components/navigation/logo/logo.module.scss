@@ -1,0 +1,21 @@
+@import 'common';
+
+.wrapper {
+    height: 18px;
+}
+
+.dark {
+    & path {
+        fill: $dark;
+    }
+}
+
+.light {
+    & svg {
+        height: 100%;
+
+        & path {
+            fill: $light;
+        }
+    }
+}
