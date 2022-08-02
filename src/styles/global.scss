@@ -37,3 +37,8 @@ li {
 a {
     text-decoration: none;
 }
+
+#__next {
+    @include flex-column();
+    align-items: center;
+}
