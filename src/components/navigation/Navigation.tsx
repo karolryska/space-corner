@@ -49,7 +49,7 @@ const Navigation = () => {
 
     return (
         <nav className={cn('wrapper', { isOpen: menuIsOpen })}>
-            <div className={styles.menu} style={{ height: isMobile ? height : 50 }}>
+            <div className={styles.menu} style={{ height: isMobile ? height : 100 }}>
                 <div className={cn('innerWrapper')}>
                     <Link href="/" passHref>
                         <Logo variant="light" />

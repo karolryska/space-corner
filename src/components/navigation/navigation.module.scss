@@ -5,6 +5,7 @@
     align-items: center;
     justify-content: space-between;
     height: 70px;
+    width: 100%;
 
     @include mq(md) {
         height: 100px;
@@ -12,6 +13,9 @@
 }
 
 .wrapper {
+    @include flex-center();
+    width: 100%;
+
     & .menu {
         z-index: 10;
         position: fixed;
@@ -34,12 +38,22 @@
             transform: translateX(0);
         }
 
+        @include mq(lg) {
+            height: 100px;
+            max-width: $desktop-content-width;
+            width: 100vw;
+        }
+
         & .innerWrapper {
             @include nav();
             margin-bottom: 30px;
 
             @include mq(md) {
                 height: 100%;
+            }
+
+            @include mq(lg) {
+                flex-grow: 1;
             }
         }
 
