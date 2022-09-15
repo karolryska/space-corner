@@ -4,7 +4,6 @@
     position: relative;
     display: flex;
     align-items: flex-end;
-    height: 100vh;
     width: 100%;
 
     & .img {
@@ -14,7 +13,6 @@
     }
 
     & .title {
-        display: block;
         z-index: 100;
         @include flex-column();
         padding: 100px 30px;
