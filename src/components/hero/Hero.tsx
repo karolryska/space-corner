@@ -1,4 +1,6 @@
+import { useContext } from 'react';
 import Image from 'next/image';
+import { DeviceHeightContext } from 'context/DeviceHeight';
 import heroImg from 'assets/images/homepage/hero.jpg';
 import styles from './hero.module.scss';
 
@@ -7,8 +9,10 @@ interface Props {
 }
 
 const Hero = ({ title }: Props) => {
+    const deviceHeight = useContext(DeviceHeightContext);
+
     return (
-        <header className={styles.wrapper}>
+        <header className={styles.wrapper} style={{ minHeight: deviceHeight?.height }}>
             <h1 className={styles.title}>
                 {title.map((item) => (
                     <span>{item}</span>
