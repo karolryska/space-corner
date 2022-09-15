@@ -48,5 +48,5 @@
         "react/require-default-props": 0,
         "react/self-closing-comp": 0
     },
-    "ignorePatterns": ["assets"]
+    "ignorePatterns": ["next.config.js"]
 }
