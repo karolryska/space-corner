@@ -12,6 +12,7 @@
 
     & .link {
         & a {
+            @include body();
             color: $light;
             text-transform: capitalize;
         }

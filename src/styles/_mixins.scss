@@ -27,3 +27,7 @@ $media: (
     display: flex;
     flex-direction: column;
 }
+
+@mixin body {
+    font-size: 14px;
+}
