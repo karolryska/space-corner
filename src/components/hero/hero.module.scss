@@ -1,0 +1,30 @@
+@import 'common';
+
+.wrapper {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    width: 100%;
+
+    & .img {
+        z-index: 0;
+        position: absolute;
+        inset: 0;
+    }
+
+    & .title {
+        z-index: 100;
+        @include flex-column();
+        padding: 30px 20px;
+        font-size: 40px;
+        line-height: 54px;
+        color: $light;
+
+        @include mq(md) {
+            padding-left: calc((100vw - $desktop-content-width) / 2);
+            padding-bottom: 80px;
+            font-size: 60px;
+            line-height: 80px;
+        }
+    }
+}
