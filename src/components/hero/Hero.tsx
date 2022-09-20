@@ -15,7 +15,7 @@ const Hero = ({ title }: Props) => {
         <header className={styles.wrapper} style={{ minHeight: deviceHeight?.height }}>
             <h1 className={styles.title}>
                 {title.map((item) => (
-                    <span>{item}</span>
+                    <span key={item}>{item}</span>
                 ))}
             </h1>
             <div className={styles.img}>
