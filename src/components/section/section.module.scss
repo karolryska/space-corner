@@ -1,0 +1,64 @@
+@import 'common';
+
+.wrapper {
+    width: 100%;
+    padding: 40px 0 0;
+
+    @include mq(md) {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 100px;
+        padding: 100px 0 100px calc((100vw - $desktop-content-width) / 2);
+    }
+
+    & .innerWrapper {
+        @include flex-column();
+        gap: 26px;
+
+        & .title {
+            padding: 0 20px;
+            text-transform: uppercase;
+        }
+
+        & .image--mobile {
+            overflow: hidden;
+            height: 66vw;
+            width: 100%;
+
+            @include mq(md) {
+                display: none;
+            }
+        }
+
+        & .body {
+            @include flex-column();
+            gap: 20px;
+            padding: 0 20px;
+
+            & a {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    & .image--desktop {
+        display: none;
+
+        @include mq(md) {
+            overflow: hidden;
+            display: block;
+            flex: 0 0 50vw;
+            height: 36vw;
+            flex-shrink: 0;
+            background-color: red;
+        }
+    }
+}
+
+.reverse {
+    @include mq(md) {
+        flex-direction: row-reverse;
+        padding: 100px calc((100vw - $desktop-content-width) / 2) 100px 0;
+    }
+}
