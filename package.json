@@ -7,15 +7,18 @@
         "build": "next build",
         "start": "next start",
         "lint": "next lint",
-        "lint-fix": "npx tsc --noEmit && npx eslint --fix src",
+        "lint-fix": "npx eslint --fix src",
         "prepare": "husky install",
         "pre-commit": "lint-staged"
     },
     "dependencies": {
+        "@types/react-slick": "^0.23.10",
         "classnames": "^2.3.1",
-        "next": "12.2.3",
+        "next": "^12.3.1",
         "react": "18.2.0",
-        "react-dom": "18.2.0"
+        "react-dom": "18.2.0",
+        "react-slick": "^0.29.0",
+        "slick-carousel": "^1.8.1"
     },
     "devDependencies": {
         "@svgr/webpack": "^6.3.1",
