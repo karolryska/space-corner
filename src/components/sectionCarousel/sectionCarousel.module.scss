@@ -38,13 +38,10 @@
 
     & .carousel {
         overflow: hidden;
-        display: flex;
-        gap: 20px;
-        width: 100%;
         padding-left: 20px;
 
-        & > * {
-            flex-shrink: 0;
+        & :global(.slick-slide) {
+            margin-right: 20px;
         }
     }
 }
