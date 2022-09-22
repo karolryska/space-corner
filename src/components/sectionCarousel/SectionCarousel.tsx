@@ -16,7 +16,7 @@ const SectionCarousel = ({ children, title }: Props) => {
                 <h2 className={cn('title')}>{title}</h2>
                 <span className={cn('body')}>{children}</span>
             </span>
-            <div className={cn('carousell')}></div>
+            <div className={cn('carousel')}></div>
         </section>
     );
 };
