@@ -3,6 +3,7 @@
 .wrapper {
     @include flex-column();
     gap: 10px;
+    cursor: pointer;
 
     & .innerWrapper {
         @include flex-column();
@@ -18,13 +19,47 @@
     }
 
     & .image {
+        position: relative;
+        overflow: hidden;
         height: 100vw;
         width: 72vw;
         background: lightgray;
 
+        & > * {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+        }
+
         @include mq(md) {
             height: 32vw;
             width: 24vw;
+
+            &:before {
+                z-index: 1;
+                opacity: 0.1;
+                position: absolute;
+                content: '';
+                inset: 0;
+                background-color: white;
+                transition: 0.4s;
+            }
+
+            & > * {
+                scale: 1.05;
+                transition: 0.8s;
+            }
+
+            &:hover {
+                &::before {
+                    opacity: 0;
+                }
+
+                & > * {
+                    scale: 1;
+                }
+            }
         }
     }
 }
