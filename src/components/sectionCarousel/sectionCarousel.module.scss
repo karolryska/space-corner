@@ -1,6 +1,7 @@
 @import 'common';
 
 .wrapper {
+    overflow: hidden;
     @include flex-column();
     gap: 30px;
     width: 100%;
@@ -37,11 +38,32 @@
     }
 
     & .carousel {
-        overflow: hidden;
+        width: 100%;
+        position: relative;
         padding-left: 20px;
 
         & :global(.slick-slide) {
             margin-right: 20px;
+        }
+
+        & .arrow {
+            display: none;
+
+            @include mq(md) {
+                display: block;
+                position: absolute;
+                right: 20px;
+                right: calc((100vw - $desktop-content-width) / 2);
+                top: -60px;
+                border: none;
+                background-color: transparent;
+                cursor: pointer;
+                transition: 0.2s;
+
+                &:hover {
+                    transform: translateX(10px);
+                }
+            }
         }
     }
 }
