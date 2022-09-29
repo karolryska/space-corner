@@ -9,14 +9,12 @@ type Props = {
     variant: 'dark' | 'light';
 };
 
-type Ref = HTMLSpanElement;
-
-const Logo = React.forwardRef<Ref, Props>(({ variant }, ref) => {
+const Logo = ({ variant }: Props) => {
     return (
-        <span className={cn('wrapper', variant)} ref={ref}>
+        <span className={cn('wrapper', variant)}>
             <LogoIcon />
         </span>
     );
-});
+};
 
 export default Logo;
