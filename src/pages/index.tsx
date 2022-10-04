@@ -1,10 +1,17 @@
 import Link from 'next/link';
-import type { NextPage } from 'next';
+import type { GetStaticProps } from 'next';
+import { gql } from '@apollo/client';
+import client from 'lib/apolloClient';
+import { OfferThumbnail } from 'types/types';
 import Navigation from 'components/navigation/Navigation';
 import Hero from 'components/hero/Hero';
 import Section from 'components/section/Section';
 
-const HomePage: NextPage = () => {
+interface Props {
+    data: OfferThumbnail[];
+}
+
+const HomePage = ({ data }: Props) => {
     return (
         <>
             <Navigation />
@@ -37,6 +44,35 @@ const HomePage: NextPage = () => {
             </Section>
         </>
     );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+    const {
+        data: {
+            officeCollection: { items },
+        },
+    } = await client.query({
+        query: gql`
+            query Offers {
+                officeCollection {
+                    items {
+                        slug
+                        name
+                        city
+                        cover {
+                            url
+                        }
+                    }
+                }
+            }
+        `,
+    });
+
+    return {
+        props: {
+            data: items,
+        },
+    };
 };
 
 export default HomePage;
