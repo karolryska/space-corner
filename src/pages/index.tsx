@@ -6,6 +6,7 @@ import { OfferThumbnail } from 'types/types';
 import Navigation from 'components/navigation/Navigation';
 import Hero from 'components/hero/Hero';
 import Section from 'components/section/Section';
+import SectionCarousel from 'components/sectionCarousel/SectionCarousel';
 
 interface Props {
     data: OfferThumbnail[];
@@ -28,7 +29,13 @@ const HomePage = ({ data }: Props) => {
                 <span>Sprawdź, co nasze biura mają Ci do zoferowania.</span>
                 <Link href="/">Dowiedz się więcej.</Link>
             </Section>
-
+            <SectionCarousel title="oferta" data={data}>
+                <span>
+                    Biuro w klimatycznej kamienicy czy nowoczesnym wieżowcu? Open space czy
+                    wydzielony pokój?
+                </span>
+                <Link href="/">Sprawdź wszystkie nasze oferty.</Link>
+            </SectionCarousel>
             <Section title="pomysł" reverse>
                 <span>
                     Czy wasze biura są pieskolubne? Czy są otwarte 24/7? Czy można wynająć biurko
