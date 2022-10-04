@@ -1,18 +1,28 @@
 import Image from 'next/image';
-import mockImg from 'assets/images/homepage/hero.jpg';
+import Link from 'next/link';
 import styles from './offerThumbnail.module.scss';
 
-const OfferThumbnail = () => {
+interface Props {
+    title: string;
+    subtitle: string;
+    img: string;
+}
+
+const OfferThumbnail = ({ title, subtitle, img }: Props) => {
     return (
-        <div className={styles.wrapper}>
-            <div className={styles.image}>
-                <Image src={mockImg} layout="fixed" />
-            </div>
-            <div className={styles.innerWrapper}>
-                <span className={styles.subtitle}>Lorem</span>
-                <h3 className={styles.title}>Ipsum</h3>
-            </div>
-        </div>
+        <li className={styles.wrapper}>
+            <Link href="/" passHref>
+                <a>
+                    <div className={styles.image}>
+                        <Image src={img} layout="fill" />
+                    </div>
+                    <div className={styles.innerWrapper}>
+                        <span className={styles.subtitle}>{title}</span>
+                        <h3 className={styles.title}>{subtitle}</h3>
+                    </div>
+                </a>
+            </Link>
+        </li>
     );
 };
 
