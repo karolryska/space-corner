@@ -58,6 +58,12 @@ export const getStaticProps: GetStaticProps = async () => {
         data: {
             officeCollection: { items },
         },
+    }: {
+        data: {
+            officeCollection: {
+                items: OfferThumbnail[];
+            };
+        };
     } = await client.query({
         query: gql`
             query Offers {
