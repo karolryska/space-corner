@@ -14,7 +14,7 @@ const OfferThumbnail = ({ title, subtitle, img }: Props) => {
             <Link href="/" passHref>
                 <a>
                     <div className={styles.image}>
-                        <Image src={img} layout="fill" />
+                        <Image src={img} layout="fill" objectFit="cover" />
                     </div>
                     <div className={styles.innerWrapper}>
                         <span className={styles.subtitle}>{title}</span>
