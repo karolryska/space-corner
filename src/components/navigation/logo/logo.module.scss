@@ -2,6 +2,14 @@
 
 .wrapper {
     height: 18px;
+
+    @include mq(md) {
+        height: 24px;
+    }
+
+    & svg {
+        height: 100%;
+    }
 }
 
 .dark {
@@ -11,11 +19,7 @@
 }
 
 .light {
-    & svg {
-        height: 100%;
-
-        & path {
-            fill: $light;
-        }
+    & path {
+        fill: $light;
     }
 }

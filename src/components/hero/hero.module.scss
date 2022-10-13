@@ -13,7 +13,7 @@
     }
 
     & .title {
-        z-index: 100;
+        z-index: 1;
         @include flex-column();
         padding: 30px 20px;
         font-size: 40px;
